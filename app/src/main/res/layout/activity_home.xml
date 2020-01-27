@@ -7,6 +7,21 @@
     android:background="#FFF"
     tools:context=".HomeActivity">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="720dp">
+
+        <TextView
+            style="@style/CustomText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="120dp"
+            android:textAlignment="center"
+            android:gravity="bottom"
+            android:text="v 0.0.2"
+            android:layout_alignParentBottom="true"
+            android:textSize="16sp" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -265,14 +280,7 @@
 
         </LinearLayout>
 
-        <TextView
-            style="@style/CustomText"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="20dp"
-            android:layout_gravity="center_horizontal"
-            android:textAlignment="center"
-            android:text="v 0.0.2"
-            android:textSize="16sp" />
+
     </LinearLayout>
+    </RelativeLayout>
 </ScrollView>

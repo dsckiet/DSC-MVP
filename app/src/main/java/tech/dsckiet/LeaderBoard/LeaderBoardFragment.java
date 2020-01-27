@@ -3,6 +3,7 @@ package tech.dsckiet.LeaderBoard;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
@@ -11,6 +12,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TableRow;
+import android.widget.TextView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -41,6 +44,7 @@ public class LeaderBoardFragment extends Fragment {
     private LeaderBoardAdapter mAdapter;
     private RecyclerView mRecyclerView;
     private Context mContext;
+    private TextView mNoContest;
     private com.wang.avi.AVLoadingIndicatorView progressBar;
 
 
@@ -52,13 +56,20 @@ public class LeaderBoardFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_leader_board,container,false);
+        final View view = inflater.inflate(R.layout.fragment_leader_board,container,false);
 
         //INITIALIZATION
         mRecyclerView = view.findViewById(R.id.recycler_view_leaderboard);
         progressBar = view.findViewById(R.id.progress_leaderboard);
+        mNoContest = view.findViewById(R.id.no_contest);
 
-        setData();
+        new Handler().postDelayed(new Runnable() {
+            public void run() {
+                mNoContest.setVisibility(View.VISIBLE);
+                progressBar.setVisibility(View.INVISIBLE);
+            }
+        }, 3000);
+//        setData();
         return view;
     }
 

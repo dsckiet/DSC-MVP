@@ -21,7 +21,19 @@
             android:layout_centerInParent="true"
             app:indicatorColor="@color/colorPrimary"
             app:indicatorName="BallScaleMultipleIndicator" />
-
+        <TextView
+            android:id="@+id/no_contest"
+            style="@style/CustomText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+            android:visibility="invisible"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/nunito"
+            android:text="No Contest Running"
+            android:textSize="24sp" />
         <TextView
             android:id="@+id/title_leaderboard"
             style="@style/CustomText"
@@ -50,6 +62,7 @@
             android:layout_marginBottom="16dp"
             android:gravity="center_vertical"
             android:orientation="vertical">
+
 
             <android.support.v4.widget.NestedScrollView
                 android:layout_width="match_parent"
